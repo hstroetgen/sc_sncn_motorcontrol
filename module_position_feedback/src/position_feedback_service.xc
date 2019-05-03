@@ -630,15 +630,6 @@ void position_feedback_service(port ?qei_hall_port_1, port ?qei_hall_port_2, Hal
             }
         }
 
-#ifdef DRIVE_REV_E
-        if (position_feedback_config_1.sensor_type == HALL_SENSOR || position_feedback_config_2.sensor_type == HALL_SENSOR)
-        {
-            if ( (position_feedback_config_1.hall_config.port_number == ENCODER_PORT_2) || (position_feedback_config_2.hall_config.port_number == ENCODER_PORT_2))
-            {
-                    *hall_enc_select_port <: 2;
-            }
-        }
-#endif
         //start services
         par {
             {//sensor 1
